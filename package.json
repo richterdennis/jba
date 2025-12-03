@@ -1,0 +1,77 @@
+{
+	"name": "jba",
+	"version": "0.0.0",
+	"description": "(J)avascript Data encoded as (B)inary (A)rray",
+	"main": "./lib/index.js",
+	"types": "./types/index.d.ts",
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./lib/index.js",
+			"types": "./types/index.d.ts"
+		},
+		"./encode": {
+			"import": "./lib/encode.js",
+			"types": "./types/encode.d.ts"
+		},
+		"./decode": {
+			"import": "./lib/decode.js",
+			"types": "./types/decode.d.ts"
+		},
+		"./types/function": {
+			"import": "./lib/types/function.js"
+		}
+	},
+	"scripts": {
+		"start": "npm run dev",
+		"dev": "nodemon examples/index.js --exec \"npm run lint && node\"",
+		"dev:inspect": "nodemon --inspect-brk examples/index.js",
+		"lint": "eslint .",
+		"lint:fix": "npm run lint -- --fix",
+		"pub": "node scripts/publish.js",
+		"pub:patch": "npm version patch",
+		"pub:feature": "npm version minor",
+		"preversion": "npm run lint",
+		"postversion": "git push && git push --tags"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/richterdennis/jba.git"
+	},
+	"keywords": [
+		"binary",
+		"encoding",
+		"serialization",
+		"uint8array",
+		"encode",
+		"decode",
+		"json",
+		"binary-format",
+		"data-serialization",
+		"javascript",
+		"typescript",
+		"bigint",
+		"date",
+		"set",
+		"map",
+		"compact",
+		"isomorphic",
+		"universal"
+	],
+	"author": "Dennis Richter <jba@richterdennis.de>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/richterdennis/jba/issues"
+	},
+	"homepage": "https://github.com/richterdennis/jba#readme",
+	"devDependencies": {
+		"@eslint/js": "9.39.1",
+		"@stylistic/eslint-plugin": "5.6.1",
+		"eslint": "9.39.1",
+		"express": "^5.2.1",
+		"globals": "^16.5.0",
+		"jba": "file:",
+		"nodemon": "^3.1.11",
+		"prompts": "^2.4.2"
+	}
+}
