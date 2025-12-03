@@ -1,6 +1,6 @@
 {
 	"name": "jba",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "(J)avascript Data encoded as (B)inary (A)rray",
 	"main": "./lib/index.js",
 	"types": "./types/index.d.ts",
