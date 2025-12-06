@@ -134,6 +134,38 @@ console.log('----------------------');
 	*/
 }
 
+console.log('----------------------');
+
+{
+	const data = -1234567890123456789012345678901234567890n;
+
+	console.log('Original data:', data);
+
+	console.time('encode to uint8');
+	const encoded = JBA.encode(data);
+	console.timeEnd('encode to uint8');
+
+	console.log('uint8 size:', encoded.length);
+
+	console.time('decode from uint8');
+	const decoded = JBA.decode(encoded);
+	console.timeEnd('decode from uint8');
+
+	assert(data === decoded, 'Should be the same!');
+
+	/* JSON cannot stringify a BigInt
+	console.time('encode to json');
+	const jsonStr = JSON.stringify(data);
+	console.timeEnd('encode to json');
+
+	console.log('json string length:', jsonStr.length);
+
+	console.time('decode from json');
+	const parsedJson = JSON.parse(jsonStr);
+	console.timeEnd('decode from json');
+	*/
+}
+
 const jbaCanDoMoreThenJson = [undefined, Infinity, -Infinity, NaN];
 
 for (const data of jbaCanDoMoreThenJson) {
