@@ -1,10 +1,10 @@
 import type Buffer from './buffer.d.ts';
 import type { EncodableTypes } from './EncodableTypes.d.ts';
 
-export type * as default from './index.d.ts';
+export * as default from './index.d.ts';
 
-export type { default as encode } from './encode.d.ts';
-export type { default as decode } from './decode.d.ts';
+export { default as encode } from './encode.d.ts';
+export { default as decode } from './decode.d.ts';
 
 export { EncodableTypes, Buffer };
 
