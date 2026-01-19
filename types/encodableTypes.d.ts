@@ -1,4 +1,4 @@
-export type encodableTypes =
+export type EncodableTypes =
 	| null
 	| undefined
 	| string
@@ -6,11 +6,11 @@ export type encodableTypes =
 	| boolean
 	| bigint
 	| Date
-	| encodableTypes[]
-	| encodableObject
-	| Set<encodableTypes>
-	| Map<encodableTypes, encodableTypes>
+	| EncodableTypes[]
+	| EncodableObject
+	| Set<EncodableTypes>
+	| Map<EncodableTypes, EncodableTypes>
 
-type encodableObject = {
-	[key: string | number]: encodableTypes;
+type EncodableObject = {
+	[key: string | number]: EncodableTypes;
 };
